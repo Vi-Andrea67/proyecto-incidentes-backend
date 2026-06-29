@@ -2,16 +2,20 @@
 
 Backend desarrollado con Spring Boot para la gestión de incidentes.
 
-## Tecnologías utilizadas
+---
+
+## 🚀 Tecnologías utilizadas
 
 - Java 17
 - Spring Boot
 - Spring Data JPA
 - Maven
-- Base de datos H2
+- Base de datos H2 (en memoria)
 - REST API
 
-## Funcionalidades
+---
+
+## ⚙️ Funcionalidades
 
 - Crear incidentes
 - Consultar todos los incidentes
@@ -20,7 +24,11 @@ Backend desarrollado con Spring Boot para la gestión de incidentes.
 - Consultar historial de incidentes relacionados
 - Manejo de estados del incidente
 
-## Estructura del proyecto
+---
+
+## 📁 Estructura del proyecto
+
+
 src
 └── main
 ├── java
@@ -30,40 +38,46 @@ src
 │ └── repository
 └── resources
 
-## Ejecución
 
-Clonar el proyecto:
+---
 
+## 📦 Ejecución del proyecto
 
-Entrar a la carpeta:
+### 1. Clonar el repositorio
 
+```bash
+git clone https://github.com/tu-usuario/tu-backend.git
 
-Ejecutar:
+2. Entrar a la carpeta
+cd tu-backend
 
-Windows:
+3. Ejecutar el proyecto
+mvnw spring-boot:run
 
+El servidor inicia en >>
+http://localhost:8080
 
-El servidor inicia en:
+Endpoints principales
 
-
-## Endpoints principales
+(Ajusta estos según tus rutas reales en el controller)
 
 Crear incidente:
-
-
+POST /incidentes
 Listar incidentes:
-
-
+GET /incidentes
 Buscar por ID:
-
-Historial:
-
-
-## Base de datos
+GET /incidentes/{id}
+Historial de incidentes:
+GET /incidentes/historial
+🗄️ Base de datos
 
 Se utiliza H2 en memoria.
 
-Consola: http://localhost:8080/h2-console
+Consola H2:
+http://localhost:8080/h2-console
 
+Credenciales (si no las cambiaste en application.properties):
 
-
+JDBC URL: jdbc:h2:mem:testdb
+Usuario: sa
+Contraseña: (vacía)
