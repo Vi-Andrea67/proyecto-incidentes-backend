@@ -1,0 +1,89 @@
+### CREACIÓN DE INCIDENTES
+
+### CREAR INCIDENTE PRINCIPAL
+
+POST http://localhost:8080/incidentes
+Content-Type: application/json
+
+{
+"descripcion": "FALLA AIRE ACONDICIONADO",
+"oficina": "OF001",
+"claseAviso": "EQUIPOS ELECTROMECANICOS",
+"prioridad": "Alta",
+"usuarioReporta": "Vivi",
+"fechaReporte": "2026-06-01"
+}
+
+###
+
+### CREAR INCIDENTE RELACIONADO
+
+POST http://localhost:8080/incidentes
+Content-Type: application/json
+
+{
+"descripcion": "Daño nuevamente en aire acondicionado",
+"oficina": "OF001",
+"claseAviso": "EQUIPOS ELECTROMECANICOS",
+"prioridad": "Media",
+"estado": "Pendiente",
+"incidentePadreId": 1,
+"usuarioReporta": "Vivi",
+"fechaReporte": "2026-06-01"
+}
+
+###
+
+### CONSULTAS GENERALES
+
+### LISTAR TODOS
+
+GET http://localhost:8080/incidentes
+
+###
+
+### BUSCAR POR ID
+
+GET http://localhost:8080/incidentes/1
+
+###
+
+### BUSCAR POR OFICINA
+
+GET http://localhost:8080/incidentes/oficina/OF001
+
+###
+
+### BUSCAR POR ESTADO
+
+GET http://localhost:8080/incidentes/estado/Pendiente
+
+###
+
+### BUSCAR POR PRIORIDAD
+
+GET http://localhost:8080/incidentes/prioridad/Alta
+
+###
+
+### HISTORIAL DE INCIDENTES
+
+### VER HISTORIAL
+
+GET http://localhost:8080/incidentes/historial/1
+
+###
+
+### ACTUALIZACIONES
+
+### CAMBIAR ESTADO A RESUELTO
+
+PUT http://localhost:8080/incidentes/1/estado?estado=Resuelto
+
+###
+
+### VALIDAR CAMBIO DE ESTADO
+
+GET http://localhost:8080/incidentes
+
+###
